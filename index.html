@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+<title>Test2</title>
+<link rel="stylesheet" href="jqueryLibs/jquery.mobile-1.4.3.min.css"></link>
+<script src="jqueryLibs/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="Globals/controllers/Main.js"></script>
+ <script type="text/javascript" src="Globals/PHPActions/reads/ReadDrivers.js"></script>
+ <script type="text/javascript" src="Globals/PHPActions/reads/ReadUtils.js"></script>
+<script>
+	$(document).on('mobileinit', function(evt){
+		 $.mobile.defaultPageTransition = "slide";
+		$.mobile.pageLoadErrorMessage="Whoop";
+		$.mobile.pageLoadErrorMessageTheme="b";
+		});
+	$(document).ready(function(){
+		var main=new Main();
+		main.init();
+	}
+    )
+</script>
+<script src="jqueryLibs/jquery.mobile-1.4.3.min.js"></script>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+	<div id="firstpage" data-role="page" data-theme="a">
+		<div data-role="header">
+		<h1>Way2Go</h1>	
+		</div>
+		<div  id="mainContainer" class="ui-content ui-btn ui-btn-b" >
+		<label for="username"  class="ui-hidden-accessible ">User Name:</label>
+		<input type="text" name="login" id="username" value="" placeholder="User Name">
+		<label for="password"  class="ui-hidden-accessible">Password:</label>
+		<input type="password" name="login" id="password"  placeholder="Password" >
+		<label for="routeno"  class="ui-hidden-accessible">Route Number:</label>
+		</div>
+		<div id="footer" data-role="footer">
+		<div>
+		<button id="confirm" class="ui-btn ui-corner-all ui-btn ui-shadow ui-btn ui-btn-b">Confirm</button>&nbsp&nbsp
+		<label id="message" style="display: inline; font-weight: bold">ver 1.27</label>
+	</div>	 
+	</div>
+	</body>
+</html>
