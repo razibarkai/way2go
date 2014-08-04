@@ -45,9 +45,7 @@ Main.prototype.init=function(){
 }
 function getLocation(){
       clearTimeout(no);
-      $("#footer #message").text("before");
       if(navigator.geolocation){
-      $("#footer #message").text("after1");
        navigator.geolocation.clearWatch(watchID);
       watchID=navigator.geolocation.watchPosition(showLocation, errorHandler);
       }
@@ -80,11 +78,10 @@ function setLocation(){
       data:data,
       url:"http://www.deorbest.com/mobile/phps/creates/location.php",
       success: function(result){
-      $("#footer #message").text("succ "+result);
+     console.log("succ "+result);
        clearTimeout(no);
       no = setTimeout(getLocation,Number(60000*Number(currentDriver.duration)));
-      console.log("succ "+result);
-      }, error: function(result){
+       }, error: function(result){
       console.log("er "+result);
       }
       })
